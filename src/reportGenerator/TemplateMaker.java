@@ -13,11 +13,12 @@ public class TemplateMaker {
 	
 	private String name;
 	private String blankReportLoc;
-	private String outputLoc = "data/output/";
+	private String outputLoc;
 	
 	public TemplateMaker(Config configuration) {
 		name = configuration.getTeacherEnglishName();
 		blankReportLoc = configuration.getBlankReportLoc();
+		outputLoc = configuration.getOutputLoc();
 	}
 	
 	/**

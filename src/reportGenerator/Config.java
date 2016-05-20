@@ -8,6 +8,7 @@ public class Config {
 	private String nameJapanese; //name in Japanese for class schedule
 	private String nameEnglish;
 	private String blankReport;
+	private String outputDirectory = "data/output/";
 	
 	
 	public Config() throws Exception {
@@ -62,5 +63,9 @@ public class Config {
 	
 	public String getBlankReportLoc() {
 		return this.blankReport;
+	}
+	
+	public String getOutputLoc() {
+		return this.getOutputLoc();
 	}
 }
