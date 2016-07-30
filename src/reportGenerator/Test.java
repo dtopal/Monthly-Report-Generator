@@ -9,8 +9,8 @@ public class Test {
 	public static void main(String[] args) throws Exception{
 				
 		//testYearly();
-		testClassSched();
-		//testTemplateMaker();
+		//testClassSched();
+		testTemplateMaker();
 	}
 	
 	public static void testYearly() throws Exception {
@@ -53,6 +53,7 @@ public class Test {
 	
 	public static void testTemplateMaker() throws Exception {
 		LocalDate day = LocalDate.now();
+		day = day.withMonth(2);
 		Config config = new Config();
 		
 		TemplateMaker tm = new TemplateMaker(config);

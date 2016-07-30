@@ -70,7 +70,7 @@ public class ClassSchedule {
 		return daySched;
 	}
 	
-	private String getDayOfWeek(LocalDate date) {
+	public String getDayOfWeek(LocalDate date) {
 		int dayIndex = date.getDayOfWeek().getValue() - 1;
 		String[] jpDays = {"月", "火", "水", "木", "金", "土", "日"};
 		return jpDays[dayIndex];

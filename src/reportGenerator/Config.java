@@ -1,6 +1,7 @@
 package reportGenerator;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class Config {
 	private String yearlySchedule;
@@ -66,6 +67,7 @@ public class Config {
 	}
 	
 	public String getOutputLoc() {
-		return this.getOutputLoc();
+		//return this.getOutputLoc();
+		return this.outputDirectory;
 	}
 }
