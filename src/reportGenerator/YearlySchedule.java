@@ -44,9 +44,12 @@ public class YearlySchedule {
 		return clone;
 	}
 	
+	/**
+	 * Finds the weekly schedule for the current day.  Returns a String for either As, Ag, B, or an empty string for a day with no classes.
+	 * @param LocalDate givenDay
+	 * @return String Weekly Schedule
+	 */
 	private String findCurrentWeekSchedule(LocalDate givenDay){
-		//Finds the weekly schedule for the current day.  Returns a String for either As, Ag, B, or an empty string for a day with no classes.
-
 		//LocalDate currentTime= LocalDate.now();
 		//int currentMonth = currentTime.getMonthValue(); //int from 1 to 12
 		String month = monthIntToJapaneseString(givenDay.getMonthValue());
@@ -102,10 +105,10 @@ public class YearlySchedule {
 		return this.currentWeekSchedule;
 	}
 	
-	public String getWeeklySchedule(int month, int day) {
-		LocalDate givenDay = LocalDate.now();
-		givenDay = givenDay.withDayOfMonth(day);
-		givenDay = givenDay.withMonth(month);
+	public String getWeeklySchedule(LocalDate givenDay) {
+		//LocalDate givenDay = LocalDate.now();
+		//givenDay = givenDay.withDayOfMonth(day);
+		//givenDay = givenDay.withMonth(month);
 		return findCurrentWeekSchedule(givenDay);
 	}
 }

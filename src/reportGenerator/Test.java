@@ -10,7 +10,8 @@ public class Test {
 				
 		//testYearly();
 		//testClassSched();
-		testTemplateMaker();
+		//testTemplateMaker();
+		testScheduleBuilder();
 	}
 	
 	public static void testYearly() throws Exception {
@@ -27,16 +28,18 @@ public class Test {
 		String ws = ys.getCurrentWeeklySchedule();
 		System.out.println("Today's weekly schedule: " + ws);
 		
-		
-		System.out.println("Weekly Schedule: " + ys.getWeeklySchedule(5, 27));
+		LocalDate givenDay = LocalDate.now();
+		givenDay = givenDay.withDayOfMonth(29);
+		givenDay = givenDay.withMonth(7);
+		System.out.println("Weekly Schedule: " + ys.getWeeklySchedule(givenDay));
 	}
 	
 	public static void testClassSched() throws Exception {
 		//String test = "class";
 		//System.out.println(test);
 		LocalDate day = LocalDate.now();
-		day = day.withMonth(5);
-		day = day.withDayOfMonth(16);
+		day = day.withMonth(7);
+		day = day.withDayOfMonth(29);
 		Config sched = new Config();
 		//String loc = sched.getClassScheduleLoc();
 		//System.out.println(loc);
@@ -58,6 +61,18 @@ public class Test {
 		
 		TemplateMaker tm = new TemplateMaker(config);
 		
-		tm.makeMonthlyTemplate(day);
+		String filename = tm.makeMonthlyTemplate(day);
+		System.out.println(filename);
+	}
+	
+	public static void testScheduleBuilder() throws Exception {
+		//LocalDate day = LocalDate.now();
+		Config config = new Config();
+		ScheduleBuilder sb = new ScheduleBuilder(config);
+		
+		int month = 7;
+		sb.buildMonth(month);
+		
+		
 	}
 }

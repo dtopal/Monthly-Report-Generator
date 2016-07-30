@@ -50,7 +50,7 @@ public class TemplateMaker {
 	 * @param time
 	 * @throws IOException 
 	 */
-	public void makeMonthlyTemplate(LocalDate time) throws IOException {
+	public String makeMonthlyTemplate(LocalDate time) throws IOException {
 		String filename = this.outputLoc + time.getYear() + " " + time.getMonth().toString() + " report " + this.name + ".xlsx";
 		Path target = Paths.get(filename);
 		Path source = Paths.get(this.blankReportLoc);
@@ -90,6 +90,8 @@ public class TemplateMaker {
 		workbook.write(fileOut);
 		workbook.close();
 		fileOut.close();
+		
+		return filename;
 	}
 	
 	/**
@@ -100,7 +102,6 @@ public class TemplateMaker {
 	public void setMonthData(LocalDate time, XSSFSheet sheet) {
 		Month month = time.getMonth();
 		int numDays = month.maxLength();
-		
 		
 		int dayIndex = 5; //where day info starts in workbook
 		for (int i = 1; i <= numDays; i++) {

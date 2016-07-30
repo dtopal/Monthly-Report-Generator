@@ -6,6 +6,8 @@ teacher japanese name: ダニエ
 
 teacher english name: Daniel
 
+school name: 長野
+
 ouput: data/ouput/
 
 blank report: data/blank monthly report.xlsx

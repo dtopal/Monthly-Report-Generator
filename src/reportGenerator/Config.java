@@ -8,6 +8,7 @@ public class Config {
 	private String classSchedule;
 	private String nameJapanese; //name in Japanese for class schedule
 	private String nameEnglish;
+	private String school;
 	private String blankReport;
 	private String outputDirectory = "data/output/";
 	
@@ -17,6 +18,7 @@ public class Config {
 		classSchedule = getFileLoc("class");
 		nameJapanese = getFileLoc("teacher japanese name"); //the method is just looking for patterns so works even though name isn't a file
 		nameEnglish = getFileLoc("teacher english name").toUpperCase();
+		school = getFileLoc("school name");
 		blankReport = getFileLoc("blank report");
 	}
 	
@@ -60,6 +62,10 @@ public class Config {
 	
 	public String getTeacherEnglishName(){
 		return this.nameEnglish;
+	}
+	
+	public String getSchoolName() {
+		return this.school;
 	}
 	
 	public String getBlankReportLoc() {
