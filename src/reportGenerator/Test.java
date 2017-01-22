@@ -12,6 +12,19 @@ public class Test {
 		//testClassSched();
 		//testTemplateMaker();
 		testScheduleBuilder();
+		
+//		if (args.length == 0) {
+//			System.out.println("Enter number of month 1 - 12");	
+//		}
+//		
+//		int month = Integer.parseInt(args[0]);
+//		buildOneMonth(month);
+	}
+	
+	public static void buildOneMonth(int month) throws Exception {
+		Config config = new Config();
+		ScheduleBuilder sb = new ScheduleBuilder(config);
+		sb.buildMonth(month);
 	}
 	
 	public static void testYearly() throws Exception {
@@ -70,9 +83,7 @@ public class Test {
 		Config config = new Config();
 		ScheduleBuilder sb = new ScheduleBuilder(config);
 		
-		int month = 7;
-		sb.buildMonth(month);
-		
-		
+		int month = 8;
+		sb.buildMonth(month);	
 	}
 }

@@ -75,6 +75,9 @@ public class ScheduleBuilder {
 	public void buildMonth(int month) throws IOException {
 		LocalDate time = LocalDate.now().withMonth(month);
 		
+		//REMOVE THIS LATER!!!!!!!!
+		time = time.withYear(2016);
+		
 		String filename = this.tm.makeMonthlyTemplate(time);
 		
 		//open as workbook to prepare for data
